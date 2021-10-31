@@ -23,10 +23,11 @@ async function run() {
 
         //post api
         app.get('/services', async (req, res) => {
+
             const cursor = serviceCollection.find({})
             const services = await cursor.toArray();
             res.send(services)
-            console.log('runing server')
+
         });
     }
     finally {
@@ -35,7 +36,9 @@ async function run() {
 
 }
 run().catch(console.dir);
-
+app.get('/', (req, res) => {
+    res.send('runing server')
+})
 
 app.listen(port, () => {
     console.log('runing on port', port)
