@@ -26,6 +26,7 @@ async function run() {
             const cursor = serviceCollection.find({})
             const services = await cursor.toArray();
             res.send(services)
+            console.log('runing server')
         });
     }
     finally {
