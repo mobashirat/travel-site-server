@@ -36,9 +36,14 @@ async function run() {
 
 }
 run().catch(console.dir);
+
 app.get('/', (req, res) => {
     res.send('runing server')
 })
+app.get('/working', (req, res) => {
+    res.send('working updated')
+})
+
 
 app.listen(port, () => {
     console.log('runing on port', port)
